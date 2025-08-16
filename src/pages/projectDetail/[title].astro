@@ -1,0 +1,72 @@
+---
+import CustomLayout from "../../layouts/CustomLayout.astro";
+import ProjectList from "../../data/projects.json";
+import type { GetStaticPaths } from "astro";
+
+export const getStaticPaths = (() => {
+    
+    return [
+        { params : { title : 'Zoominoutron' }},
+        { params : { title : 'My Physio'}},
+        { params : { title : 'Unity Essentials Project'}},
+        { params : { title : 'Cube Clicker'}}
+    ];
+}) satisfies GetStaticPaths;
+
+const { title } = Astro.params;
+
+//const title = "Zoominoutron"
+---
+
+<CustomLayout title="Project Detail">
+    <h1 class="permanent-marker">Project detail</h1>
+    <div class="div-center">
+        {
+            ProjectList.filter((project) => project.title === title).map(
+                (project) => (
+                    <section class="card full-card">
+                        <div class="div-center">
+                            <h2 class="permanent-marker">{project.title}</h2>
+                            <div class="div-center">
+                                <section class="projectGallery">
+                                    {project.images.map((image) => (
+                                        <img src={image} class="projectImage" />
+                                    ))}
+                                </section>
+                            </div>
+                            <p class="indie-flower">{project.description}</p>
+                            <p class="indie-flower">{project.aditionalInfo}</p>
+                            <video
+                                src={project.video}
+                                controls
+                                width="800"
+                                height="600"
+                            />
+                        </div>
+                        
+                        <div class="div-row center-items">
+                            <a href={project.githubUrl} target="_blank">
+                                <img
+                                    src="../../public/footerIcons/githubIcon.svg"
+                                    alt="Github Link"
+                                    width="50"
+                                    height="50"
+                                    title="GitHub Link"
+                                />
+                            </a>
+                            <a href={project.deployUrl} target="_blank">
+                                <img
+                                    src="../../public/footerIcons/download.svg"
+                                    alt="Download"
+                                    width="50"
+                                    height="50"
+                                    title="Download"
+                                />
+                            </a>
+                        </div>
+                    </section>
+                ),
+            )
+        }
+    </div>
+</CustomLayout>

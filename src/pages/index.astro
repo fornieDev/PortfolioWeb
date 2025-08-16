@@ -1,11 +1,293 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import CustomLayout from "../layouts/CustomLayout.astro";
+import SkillIcon from "../components/SkillIcon.astro";
+import Projects from "../data/projects.json";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<CustomLayout title="FornieDev Portfolio">
+	<!--Arriba habría que añadir botones para cambiar de modo claro a oscuro y cambiar de idioma -->
+
+	<!-- Cabecera -->
+	<div class="div-center">
+		<h1 class="permanent-marker">WELCOME TO MY PORTFOLIO!!!</h1>
+		<img
+			src="../../public/headerIcons/profilePhoto.jpg"
+			alt="Profile photo"
+			class="profilePhoto"
+			id="profilePhoto"
+		/>
+	</div>
+	<div class="div-center">
+		<p class="indie-flower">
+			Hi!I'm Javier Fornié Ortega, <b>autodidact software developer.</b>
+			I was physiotherapist when I had an idea for a mobile app,but I hadn't
+			enough money to develop it,so I decide to develop it by myself. I started
+			to study and develop my app in my house in my free time and,after a few
+			months,I published my first app. That was the moment that I realized
+			that I love this,I wanted to became a developer.And this is the begining
+			of my story...
+		</p>
+	</div>
+
+	<!-- Se podrian mejor los iconos para que nose vean recortados -->
+	<!-- Section knowledge -->
+	<h2 class="permanent-marker">KNOWLEDGE</h2>
+	<!-- First card row -->
+	<div class="div-row">
+		<section class="card">
+			<h3 class="indie-flower">
+				Integrated developing enviroments and frameworks
+			</h3>
+			<div class="div-row wrap">
+				<!-- Las cards deberian ser responsive para que al estrechar el navegador ocupen un alto igual -->
+				<SkillIcon
+					src="../../public/knowledgeIcons/androidStudioLogo.jpg"
+					alt="Android Studio"
+					rate="3"
+				/>
+				<SkillIcon
+					src="../../public/knowledgeIcons/vs.jpg"
+					alt="Visual Studio"
+					rate="2"
+				/>
+				<SkillIcon
+					src="../../public/knowledgeIcons/eclipse.svg"
+					alt="Eclipse"
+					rate="1"
+				/>
+				<SkillIcon
+					src="../../public/knowledgeIcons/netbeans.svg"
+					alt="NetBeans"
+					rate="1"
+				/>
+				<SkillIcon
+					src="../../public/knowledgeIcons/unity.svg"
+					alt="Unity"
+					rate="2"
+				/>
+				<SkillIcon
+					src="../../public/knowledgeIcons/vsc.jpg"
+					alt="Visual Studio Code"
+					rate="2"
+				/>
+				<SkillIcon
+					src="../../public/knowledgeIcons/astro.png"
+					alt="Astro"
+					rate="2"
+				/>
+			</div>
+		</section>
+		<section class="card">
+			<h3 class="indie-flower">Languages</h3>
+			<div class="div-row wrap">
+				<SkillIcon
+					src="../../public/knowledgeIcons/c++.png"
+					alt="C++"
+					rate="1"
+				/>
+				<SkillIcon
+					src="../../public/knowledgeIcons/kotlin.png"
+					alt="Kotlin"
+					rate="3"
+				/>
+				<SkillIcon
+					src="../../public/knowledgeIcons/csharp.png"
+					alt="C sharp"
+					rate="2"
+				/>
+				<SkillIcon
+					src="../../public/knowledgeIcons/java.svg"
+					alt="Java"
+					rate="1"
+				/>
+				<SkillIcon
+					src="../../public/knowledgeIcons/python.svg"
+					alt="Python"
+					rate="1"
+				/>
+				<SkillIcon
+					src="../../public/knowledgeIcons/html2.svg"
+					alt="HTML"
+					rate="2"
+				/>
+				<SkillIcon
+					src="../../public/knowledgeIcons/css3.svg"
+					alt="CSS"
+					rate="2"
+				/>
+				<SkillIcon
+					src="../../public/knowledgeIcons/javascript.svg"
+					alt="Javascript"
+					rate="2"
+				/>
+			</div>
+		</section>
+	</div>
+	<!-- Second card row -->
+	<div class="div-row">
+		<section class="card">
+			<h3 class="indie-flower">Database base management systems</h3>
+			<div class="div-row wrap">
+				<SkillIcon
+					src="../../public/knowledgeIcons/firestore.svg"
+					alt="Firestore"
+					rate="3"
+				/>
+				<SkillIcon
+					src="../../public/knowledgeIcons/cloudstorage.png"
+					alt="Cloud Storage"
+					rate="3"
+				/>
+				<SkillIcon
+					src="../../public/knowledgeIcons/mysql_workbench.jpg"
+					alt="My SQL Workbench"
+					rate="1"
+				/>
+				<SkillIcon
+					src="../../public/knowledgeIcons/oracleSqlDeveloper2.png"
+					alt="oracle SQL Developer"
+					rate="1"
+				/>
+			</div>
+		</section>
+		<section class="card">
+			<h3 class="indie-flower">Database languages</h3>
+			<div class="div-row wrap">
+				<SkillIcon
+					src="../../public/knowledgeIcons/sql.png"
+					alt="SQL"
+					rate="1"
+				/>
+				<SkillIcon
+					src="../../public/knowledgeIcons/pl-sql.png"
+					alt="PL SQL"
+					rate="1"
+				/>
+			</div>
+		</section>
+	</div>
+
+	<!-- Estaría bien componetizar la galería -->
+	<!-- Se podria hacer más responsible el p de la description -->
+	<!-- Pages projects y project -->
+	<!-- Section projects -->
+	<h2 class="permanent-marker">PROJECTS</h2>
+	<div class="div-center">
+		<section class="gallery">
+			{
+				Projects.filter((project) => project.preview).map((project) => (
+					<a
+						href={`/projectDetail/${project.title}`}
+						class="linkGallery"
+					>
+						<img
+							src={project.images[0]}
+							alt={project.title}
+							class="imageGallery"
+							data-title={project.title}
+							data-description={project.description}
+						/>
+					</a>
+				))
+			}
+		</section>
+	</div>
+	<h3 class="indie-flower center-text empty" id="projectTitle"></h3>
+	<p class="indie-flower center-text empty" id="projectDescription"></p>
+	<div class="div-center">
+		<a href="projects">
+			<img src="../../public/projectIcons/more.svg" width="50" height="50" title="More projects"/>
+		</a>
+	</div>
+
+	<hr />
+	<!-- Footer section -->
+	<div class="div-row">
+		<div class="column">
+			<!-- Social network section -->
+			<h2 class="permanent-marker">Want some info?</h2>
+			<div class="div-row center-items">
+				<a href="https://github.com/fornieDev" target="_blank">
+					<img
+						src="../../public/footerIcons/githubIcon.svg"
+						alt="Github Icon"
+						width="50"
+						height="50"
+					/>
+				</a>
+				<a
+					href="https://www.linkedin.com/in/javier-forni%C3%A9-ortega-8435a9307/"
+					target="_blank"
+				>
+					<img
+						src="../../public/footerIcons/linkedin.svg"
+						alt="Linkedin"
+						width="50"
+						height="50"
+					/>
+				</a>
+				<a href="../../public/curriculum/CV.pdf" target="_blank">
+					<img
+						src="../../public/footerIcons/cv.svg"
+						alt="Curriculum"
+						width="50"
+						height="50"
+					/>
+				</a>
+			</div>
+			<h3 class="indie-flower center-text">
+				Chek my curriculum or social networks
+			</h3>
+		</div>
+		<div class="column">
+			<!-- Email section -->
+			<h2 class="permanent-marker">Did you like it?</h2>
+			<div class="div-center">
+				<a href="mailto:jfornieortega@gmail.com" target="_blank">
+					<img
+						src="../../public/footerIcons/emailIcon.svg"
+						alt="Email Icon"
+						width="50"
+						height="50"
+					/>
+				</a>
+				<h3 class="indie-flower">
+					Contact me on jfornieortega@gmail.com
+				</h3>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		const images = document.querySelectorAll(".imageGallery");
+
+		images.forEach((img) => {
+			img.addEventListener("mouseover", () => {
+				const title = img.getAttribute("data-title");
+				const description = img.getAttribute("data-description");
+				console.log(title);
+
+				document.getElementById("projectTitle")!!.textContent = title;
+				document.getElementById("projectDescription")!!.textContent =
+					description;
+			});
+
+			img.addEventListener("mouseout", () => {
+				document.getElementById("projectTitle")!!.textContent = "";
+				document.getElementById("projectDescription")!!.textContent =
+					"";
+			});
+
+			img.addEventListener("click", () => {
+				const title = img.getAttribute("data-title");
+				if (title == "More projects") {
+					window.location.href = `projects`;
+				} else {
+				}
+			});
+		});
+	</script>
+</CustomLayout>
+
+<!-- window.location.href = `project?data=${encodeURIComponent(title!!)}`; -->
+<!-- Esto iba dentro del else del listener click de las imagenes de la galeria -->

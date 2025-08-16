@@ -1,0 +1,207 @@
+---
+import "../styles/colors.css";
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/footerIcons/cv.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Permanent+Marker&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <slot />
+    </body>
+</html>
+
+<style is:global>
+    html,
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+    h1 {
+        color: var(--color-primary);
+        text-align: center;
+        font-size: 4em;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+            sans-serif;
+    }
+    p {
+        color: var(--color-text);
+        text-align: justify;
+        font-size: 1.5em;
+        padding: 2em;
+    }
+    h2 {
+        color: var(--color-primary);
+        text-align: center;
+        font-size: 3em;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+            sans-serif;
+    }
+    h3 {
+        color: var(--color-secondary);
+        text-align: left;
+        font-size: 2em;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+            sans-serif;
+    }
+    hr {
+        width: 95%;
+        height: 1px;
+        background-color: var(--color-text);
+    }
+    .div-center {
+        display: flex;
+        flex-direction: column; /* para que el h1 y el img estén uno debajo del otro */
+        align-items: center; /* centra horizontalmente */
+        justify-content: center; /* centra verticalmente si tiene altura */
+        text-align: center;
+        padding: 1.5em;
+    }
+    .permanent-marker {
+        font-family: "Permanent Marker", cursive;
+        font-weight: 400;
+        font-style: normal;
+    }
+    .profilePhoto {
+        width: 150px; /* ancho fijo */
+        height: 150px; /* alto igual al ancho */
+        border-radius: 50%; /* hace la forma circular */
+        object-fit: cover;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        align-self: center;
+    }
+    .rounded {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+    .indie-flower {
+        font-family: "Indie Flower", cursive;
+        font-weight: bold;
+        font-style: normal;
+    }
+    .div-row {
+        display: flex;
+        flex-direction: row; /* para que el h1 y el img estén uno debajo del otro */
+        align-items: center; /* centra horizontalmente */
+        justify-content: left; /* centra verticalmente si tiene altura */
+        text-align: center;
+        padding: 1em;
+        gap: 2em;
+    }
+    .wrap {
+        flex-wrap: wrap; /* <-- Permite que salten a la siguiente fila */
+    }
+    .card {
+        background-color: var(--color-bg); /* Fondo blanco */
+        border-radius: 12px; /* Esquinas redondeadas */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        padding: 20px; /* Espacio interno */
+        margin: 20px;
+        display: flex;
+        flex-direction: column; /* para que h1 y img estén uno encima del otro */
+        justify-content: center; /* centra verticalmente si quieres, opcional */
+        gap: 10px;
+        width: 50%;
+        height: 100%; /* ← Para que se estire al alto del padre */
+        box-sizing: border-box; /* Para que el padding no rompa el alto */
+    }
+    .full-card {
+        width: 100%;
+    }
+    .center-text {
+        text-align: center;
+    }
+    .column {
+        flex: 1; /* ocupa el mismo espacio cada columna */
+        padding: 20px;
+    }
+    .center-items {
+        justify-content: center;
+    }
+    .gallery {
+        display: flex;
+        width: 800px;
+        height: 200px;
+        border: 2px solid var(--color-text);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    .linkGallery {
+        flex-grow: 1;
+        flex-shrink: 1;
+        width: 0;
+        transition: 0.5s ease;
+        overflow: hidden; /* evita que la imagen se salga */
+    }
+    .linkGallery img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.8;
+        transition: 0.5s ease;
+    }
+
+    .linkGallery:hover {
+        width: 600px;
+    }
+
+    .linkGallery:hover img {
+        opacity: 1;
+        filter: contrast(120%);
+    }
+    .projectGallery {
+    display: flex;
+    width: 800px;
+    height: 200px;
+    border: 2px solid var(--color-text);
+    border-radius: 8px;
+    position: relative; /* necesario para el z-index */
+    z-index: 1; /* nivel base */
+}
+
+.projectGallery:hover {
+    z-index: 999; /* sube toda la galería */
+}
+
+.projectImage {
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 0;
+    height: 100%;
+    object-fit: contain; /* mantiene la proporción, sin recorte */
+    background-color: var(--color-background, #ffffff); /* relleno detrás */
+    opacity: 0.8;
+    transition: 0.5s ease;
+    z-index: 1;
+}
+
+.projectImage:hover {
+    transform: scale(4);
+    opacity: 1;
+    filter: contrast(120%);
+    position: relative;
+    z-index: 2; /* encima del resto de imágenes dentro de la galería */
+    background-color: transparent; /* sin relleno en hover */
+}
+    .empty {
+        height: 50px;
+    }
+</style>

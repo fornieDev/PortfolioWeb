@@ -1,0 +1,70 @@
+---
+const { src, alt, rate } = Astro.props;
+
+const solidStars = Array.from({ length: rate });
+const emptyStars = Array.from({ length: 5 - rate });
+const rateHint = "1 star : Used for less than 6 months ; 2 stars : Used for more than 6 months ; 3 stars : Used for more than 1 year ; 4 stars : Used for more than 2 years ; 5 stars : Used for more than 5 years"
+---
+
+<div class="skill-div">
+    <img src={src} alt={alt} class="skill-logo" title={alt} />
+    <div class="stars">
+        {
+            solidStars.map(() => (
+                <img
+                    src="../../public/knowledgeIcons/solid-star.svg"
+                    alt="star"
+                    class="star-icon"
+                    title={rateHint}
+                />
+            ))
+        }
+        {
+            emptyStars.map(() => (
+                <img
+                    src="../../public/knowledgeIcons/star.svg"
+                    alt="star"
+                    class="star-icon"
+                    title={rateHint}
+                />
+            ))
+        }
+    </div>
+</div>
+
+<style>
+    .skill-div {
+        margin-top: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .skill-logo {
+        width: 100px; /* min 40px, ideal 15% del ancho viewport, máx 100px */
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .stars {
+        display: flex;
+        justify-content: center;
+    }
+
+    .star-icon {
+        width: 20px; /* min 12px, ideal 4% del ancho viewport, máx 20px */
+        height: auto; /* proporcional */
+    }
+    .skill-logo:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        transform: scale(1.1);
+        transition: transform 0.5s ease;
+    }
+    .stars:hover {
+        transform: scale(1.5);
+        transition: transform 0.5s ease;
+    }
+</style>
