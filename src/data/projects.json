@@ -5,8 +5,8 @@
     "aditionalInfo": "Tecnologiess: developed for Android with Android Studio in Kotlin,with Firebase Data Base. Involvement: unipersonal project. Roles: desing, fullstack developement and testing.",
     "githubUrl": "/privateGithub",
     "deployUrl": "https://play.google.com/store/apps/details?id=com.fornieDev.myphysio&hl=es_419",
-    "images": ["../../public/projectImages/myPhysio1.png", "../../public/projectImages/myPhysio2.jpg", "../../public/projectImages/myPhysio3.jpg", "../../public/projectImages/myPhysio4.jpg", "../../public/projectImages/myPhysio5.jpg", "../../public/projectImages/myPhysio6.jpg", "../../public/projectImages/myPhysio7.jpg", "../../public/projectImages/myPhysio8.jpg"],
-    "video": "../../public/projectVideos/myPhysio.mp4",
+    "images": ["/projectImages/myPhysio1.png", "/projectImages/myPhysio2.jpg", "/projectImages/myPhysio3.jpg", "/projectImages/myPhysio4.jpg", "/projectImages/myPhysio5.jpg", "/projectImages/myPhysio6.jpg", "/projectImages/myPhysio7.jpg", "/projectImages/myPhysio8.jpg"],
+    "video": "/projectVideos/myPhysio.mp4",
     "preview": true
   },
   {
@@ -15,8 +15,8 @@
     "aditionalInfo": "Tecnologies: developed in Eclipse with Java. Involvement: unipersonal project. Roles: desing, developement and testing.",
     "githubUrl": "https://github.com/fornieDev/Chatbot",
     "deployUrl": "https://github.com/fornieDev/Chatbot",
-    "images": ["../../public/projectImages/chatbot1.png", "../../public/projectImages/chatbot2.png", "../../public/projectImages/chatbot3.png", "../../public/projectImages/chatbot4.png", "../../public/projectImages/chatbot5.png", "../../public/projectImages/chatbot6.png", "../../public/projectImages/chatbot7.png", "../../public/projectImages/chatbot8.png"],
-    "video": "../../public/projectVideos/chatbot.mkv",
+    "images": ["/projectImages/chatbot1.png", "/projectImages/chatbot2.png", "/projectImages/chatbot3.png", "/projectImages/chatbot4.png", "/projectImages/chatbot5.png", "/projectImages/chatbot6.png", "/projectImages/chatbot7.png", "/projectImages/chatbot8.png"],
+    "video": "/projectVideos/chatbot.mkv",
     "preview": false
   },
   {
@@ -24,9 +24,9 @@
     "description": "Zoominoutron is a puzle platform videogame developed for PC made with Unity where we control Nikola, a science prodigy kid who after an accident,gets the ability to make him bigger or smaller at will.We must use this power to scape from the room where we got stucked after the accident to find a cure.",
     "aditionalInfo": "Tecnologies: developed in Unity and Visual Studio with C#. For the save game it uses a json local file. Involvement: unipersonal project. Roles:desing, fullstack developement, testing.",
     "githubUrl": "https://github.com/fornieDev/ZoominotronIgnore",
-    "deployUrl": "../../public/projectExecutables/ZoominoutronEjecutable.rar",
-    "images": ["../../public/projectImages/zoominoutron1.png", "../../public/projectImages/zoominoutron2.png", "../../public/projectImages/zoominoutron3.png", "../../public/projectImages/zoominoutron4.png", "../../public/projectImages/zoominoutron5.png", "../../public/projectImages/zoominoutron6.png", "../../public/projectImages/zoominoutron7.png", "../../public/projectImages/zoominoutron8.png"],
-    "video": "../../public/projectVideos/zoominoutron.mkv",
+    "deployUrl": "/projectExecutables/ZoominoutronEjecutable.rar",
+    "images": ["/projectImages/zoominoutron1.png", "/projectImages/zoominoutron2.png", "/projectImages/zoominoutron3.png", "/projectImages/zoominoutron4.png", "/projectImages/zoominoutron5.png", "/projectImages/zoominoutron6.png", "/projectImages/zoominoutron7.png", "/projectImages/zoominoutron8.png"],
+    "video": "/projectVideos/zoominoutron.mkv",
     "preview": true
   },
   {
@@ -35,8 +35,8 @@
     "aditionalInfo": "Tecnologies: developed in Unity and Visual Studio with C#. Involvement: unipersonal project. Roles: fullstack developement.",
     "githubUrl": "https://github.com/fornieDev/UnityEssentials",
     "deployUrl": "https://play.unity.com/en/games/4901c461-3f29-4af7-9178-0525179207d2/webgl-builds",
-    "images": ["../../public/projectImages/unityEssentials1.png", "../../public/projectImages/unityEssentials2.png","../../public/projectImages/unityEssentials3.png","../../public/projectImages/unityEssentials4.png","../../public/projectImages/unityEssentials5.png"],
-    "video": "../../public/projectVideos/unityEssentials.mp4",
+    "images": ["/projectImages/unityEssentials1.png", "/projectImages/unityEssentials2.png","/projectImages/unityEssentials3.png","/projectImages/unityEssentials4.png","/projectImages/unityEssentials5.png"],
+    "video": "/projectVideos/unityEssentials.mp4",
     "preview": true
   },
   {
@@ -44,9 +44,9 @@
     "description": "Cube Clicker is a game for Android with a cube wich faces a coloured in diferent colors, and bytt clicking the cube it's boost upward.We must avoid the cube from falling down,with the aditional dificulty that every click changes the background to the same color of the face,and if we click a face of the color of the background the game ends.",
     "aditionalInfo": "Tecnologies: developed in Unity and Visual Studio with C#. Involvement: unipersonal project. Roles: desing,developement and testing.",
     "githubUrl": "https://github.com/fornieDev/CubeClickerRepository",
-    "deployUrl": "../../public/projectExecutables/cubeClicker.apk",
-    "images": ["../../public/projectImages/cubeClicker1.png", "../../public/projectImages/cubeClicker2.jpeg", "../../public/projectImages/cubeClicker3.jpeg", "../../public/projectImages/cubeClicker4.jpeg", "../../public/projectImages/cubeClicker5.jpeg"],
-    "video": "../../public/projectVideos/cubeClicker.mp4",
+    "deployUrl": "/projectExecutables/cubeClicker.apk",
+    "images": ["/projectImages/cubeClicker1.png", "/projectImages/cubeClicker2.jpeg", "/projectImages/cubeClicker3.jpeg", "/projectImages/cubeClicker4.jpeg", "/projectImages/cubeClicker5.jpeg"],
+    "video": "/projectVideos/cubeClicker.mp4",
     "preview": true
   },
   {
@@ -55,8 +55,8 @@
     "aditionalInfo": "Technologies: developed by Unity with Visual Studio and C#. Involvement: tutorial guided development. Roles: developer.",
     "githubUrl": "https://github.com/fornieDev/Junior-Programmer-1--Truck",
     "deployUrl": "https://play.unity.com/en/games/4fa558b1-48fd-4e97-8e08-04d72a5de4c3/junior-programmer-1-truck",
-    "images": ["../../public/projectImages/truck1.png", "../../public/projectImages/truck2.png", "../../public/projectImages/truck3.png", "../../public/projectImages/truck4.png"],
-    "video": "../../public/projectVideos/truck.mkv",
+    "images": ["/projectImages/truck1.png", "/projectImages/truck2.png", "/projectImages/truck3.png", "/projectImages/truck4.png"],
+    "video": "/projectVideos/truck.mkv",
     "preview": false
   },
   {
@@ -65,8 +65,8 @@
     "aditionalInfo": "Technologies: developed by Unity with Visual Studio and C#. Involvement: tutorial guided development. Roles: developer.",
     "githubUrl": "https://github.com/fornieDev/Junior-Programmer-2--Plane",
     "deployUrl": "https://play.unity.com/en/games/bd34edb4-80a0-4c8d-9248-39dd182b1ff7/junior-programmer-2-plane",
-    "images": ["../../public/projectImages/plane1.png", "../../public/projectImages/plane2.png", "../../public/projectImages/plane3.png"],
-    "video": "../../public/projectVideos/plane.mkv",
+    "images": ["/projectImages/plane1.png", "/projectImages/plane2.png", "/projectImages/plane3.png"],
+    "video": "/projectVideos/plane.mkv",
     "preview": false
   },
   {
@@ -75,8 +75,8 @@
     "aditionalInfo": "Technologies: developed by Unity with Visual Studio and C#. Involvement: tutorial guided development. Roles: developer.",
     "githubUrl": "https://github.com/fornieDev/Junior-Programmer-3--Stampede",
     "deployUrl": "https://play.unity.com/en/games/53382ab1-5703-4aa7-a2ee-bb68200d7bb6/junior-programmer-3-stampede",
-    "images": ["../../public/projectImages/stampede1.png", "../../public/projectImages/stampede2.png"],
-    "video": "../../public/projectVideos/stampede.mkv",
+    "images": ["/projectImages/stampede1.png", "/projectImages/stampede2.png"],
+    "video": "/projectVideos/stampede.mkv",
     "preview": false
   },
   {
@@ -85,8 +85,8 @@
     "aditionalInfo": "Technologies: developed by Unity with Visual Studio and C#. Involvement: tutorial guided development. Roles: developer.",
     "githubUrl": "https://github.com/fornieDev/Junior-Programmer-4--Running-dog",
     "deployUrl": "https://play.unity.com/en/games/26fbca41-b9a2-4a02-bedb-51334b313a0c/junior-programmer-4-running-dog",
-    "images": ["../../public/projectImages/runningDog1.png", "../../public/projectImages/runningDog2.png", "../../public/projectImages/runningDog3.png"],
-    "video": "../../public/projectVideos/runningDog.mkv",
+    "images": ["/projectImages/runningDog1.png", "/projectImages/runningDog2.png", "/projectImages/runningDog3.png"],
+    "video": "/projectVideos/runningDog.mkv",
     "preview": false
   },
   {
@@ -95,8 +95,8 @@
     "aditionalInfo": "Technologies: developed by Unity with Visual Studio and C#. Involvement: unipersonal project. Roles: desing, fullstack developing, and testing.",
     "githubUrl": "https://github.com/fornieDev/Junior-Programmer-5--Tower-Defense",
     "deployUrl": "https://play.unity.com/en/games/172aaacd-35f9-4914-9806-4914baf7fc97/junior-programmer-5-tower-defense",
-    "images": ["../../public/projectImages/towerDefense1.png", "../../public/projectImages/towerDefense2.png", "../../public/projectImages/towerDefense3.png", "../../public/projectImages/towerDefense4.png", "../../public/projectImages/towerDefense5.png"],
-    "video": "../../public/projectVideos/towerDefense.mkv",
+    "images": ["/projectImages/towerDefense1.png", "/projectImages/towerDefense2.png", "/projectImages/towerDefense3.png", "/projectImages/towerDefense4.png", "/projectImages/towerDefense5.png"],
+    "video": "/projectVideos/towerDefense.mkv",
     "preview": false
   },
   {
@@ -105,8 +105,8 @@
     "aditionalInfo": "Technologies: developed by Unity with Visual Studio and C#. Involvement: tutorial guided development. Roles: developer.",
     "githubUrl": "https://github.com/fornieDev/Junior-Programmer-7--jumping-fences",
     "deployUrl": "https://play.unity.com/en/games/e434c189-02a7-428f-96e3-00ab64bbeed1/junior-programmer-7-jumping-fences",
-    "images": ["../../public/projectImages/jumpingFences1.png", "../../public/projectImages/jumpingFences2.png", "../../public/projectImages/jumpingFences3.png", "../../public/projectImages/jumpingFences4.png"],
-    "video": "../../public/projectVideos/jumpingFences.mkv",
+    "images": ["/projectImages/jumpingFences1.png", "/projectImages/jumpingFences2.png", "/projectImages/jumpingFences3.png", "/projectImages/jumpingFences4.png"],
+    "video": "/projectVideos/jumpingFences.mkv",
     "preview": false
   },
   {
@@ -115,8 +115,8 @@
     "aditionalInfo": "Technologies: developed by Unity with Visual Studio and C#. Involvement: tutorial guided development. Roles: developer.",
     "githubUrl": "https://github.com/fornieDev/Junior-Programmer-8--ballon",
     "deployUrl": "https://play.unity.com/en/games/776d64d3-3b12-4ccd-a018-d82a6b1909de/junior-programmer-8-ballon",
-    "images": ["../../public/projectImages/ballon1.png", "../../public/projectImages/ballon2.png", "../../public/projectImages/ballon3.png", "../../public/projectImages/ballon4.png"],
-    "video": "../../public/projectVideos/ballon.mkv",
+    "images": ["/projectImages/ballon1.png", "/projectImages/ballon2.png", "/projectImages/ballon3.png", "/projectImages/ballon4.png"],
+    "video": "/projectVideos/ballon.mkv",
     "preview": false
   },
   {
@@ -125,8 +125,8 @@
     "aditionalInfo": "Technologies: developed by Unity with Visual Studio and C#. Involvement: tutorial guided development. Roles: developer.",
     "githubUrl": "https://github.com/fornieDev/Junior-Programmer-9--ball-wars",
     "deployUrl": "https://play.unity.com/en/games/496167ee-fd46-4c0d-8814-021c16bb887f/junior-programmer-9-ball-wars",
-    "images": ["../../public/projectImages/ballWars1.png", "../../public/projectImages/ballWars2.png", "../../public/projectImages/ballWars3.png"],
-    "video": "../../public/projectVideos/ballWars.mkv",
+    "images": ["/projectImages/ballWars1.png", "/projectImages/ballWars2.png", "/projectImages/ballWars3.png"],
+    "video": "/projectVideos/ballWars.mkv",
     "preview": false
   },
   {
@@ -135,8 +135,8 @@
     "aditionalInfo": "Technologies: developed by Unity with Visual Studio and C#. Involvement: tutorial guided development. Roles: developer.",
     "githubUrl": "https://github.com/fornieDev/Junior-Programmer-10--Foot-Balls",
     "deployUrl": "https://play.unity.com/en/games/8051c3c3-cdbe-43f7-9835-10814ddc824c/junior-programmer-10-foot-balls",
-    "images": ["../../public/projectImages/footBalls1.png", "../../public/projectImages/footBalls2.png", "../../public/projectImages/footBalls3.png", "../../public/projectImages/footBalls4.png", "../../public/projectImages/footBalls5.png", "../../public/projectImages/footBalls6.png"],
-    "video": "../../public/projectVideos/footBalls.mkv",
+    "images": ["/projectImages/footBalls1.png", "/projectImages/footBalls2.png", "/projectImages/footBalls3.png", "/projectImages/footBalls4.png", "/projectImages/footBalls5.png", "/projectImages/footBalls6.png"],
+    "video": "/projectVideos/footBalls.mkv",
     "preview": false
   },
   {
@@ -145,8 +145,8 @@
     "aditionalInfo": "Technologies: developed by Unity with Visual Studio and C#. Involvement: tutorial guided development. Roles: developer.",
     "githubUrl": "https://github.com/fornieDev/Junior-Programmer-11--Clicky-Boxes",
     "deployUrl": "https://play.unity.com/en/games/88803e9e-9e29-43e2-846d-c7cee10de518/junior-programmer-11-clicky-boxes",
-    "images": ["../../public/projectImages/clickyBoxes1.png", "../../public/projectImages/clickyBoxes2.png", "../../public/projectImages/clickyBoxes3.png", "../../public/projectImages/clickyBoxes4.png"],
-    "video": "../../public/projectVideos/clickyBoxes.mkv",
+    "images": ["/projectImages/clickyBoxes1.png", "/projectImages/clickyBoxes2.png", "/projectImages/clickyBoxes3.png", "/projectImages/clickyBoxes4.png"],
+    "video": "/projectVideos/clickyBoxes.mkv",
     "preview": false
   },
   {
@@ -155,8 +155,8 @@
     "aditionalInfo": "Technologies: developed by Unity with Visual Studio and C#. Involvement: tutorial guided development. Roles: developer.",
     "githubUrl": "https://github.com/fornieDev/Junior-Programmer-12--Clicky-Food",
     "deployUrl": "https://play.unity.com/en/games/3ccb559c-db42-4e22-9e2d-d48bb838a5ae/junior-programmer-12-clicky-food",
-    "images": ["../../public/projectImages/clickyFood1.png", "../../public/projectImages/clickyFood2.png", "../../public/projectImages/clickyFood3.png", "../../public/projectImages/clickyFood4.png"],
-    "video": "../../public/projectVideos/clickyFood.mkv",
+    "images": ["/projectImages/clickyFood1.png", "/projectImages/clickyFood2.png", "/projectImages/clickyFood3.png", "/projectImages/clickyFood4.png"],
+    "video": "/projectVideos/clickyFood.mkv",
     "preview": false
   },
   {
@@ -165,8 +165,8 @@
     "aditionalInfo": "Technologies: developed by Unity with Visual Studio and C#. Involvement: tutorial guided development. Roles: developer.",
     "githubUrl": "https://github.com/fornieDev/Junior-Programer-14--Basket-Counter",
     "deployUrl": "https://play.unity.com/en/games/7a3370a7-6c3f-47d4-90c0-6b73344e21ca/basket",
-    "images": ["../../public/projectImages/basket1.png", "../../public/projectImages/basket2.png", "../../public/projectImages/basket3.png"],
-    "video": "../../public/projectVideos/basket.mkv",
+    "images": ["/projectImages/basket1.png", "/projectImages/basket2.png", "/projectImages/basket3.png"],
+    "video": "/projectVideos/basket.mkv",
     "preview": false
   },
   {
@@ -175,8 +175,8 @@
     "aditionalInfo": "Technologies: developed by Unity with Visual Studio and C#. Involvement: tutorial guided development. Roles: developer.",
     "githubUrl": "https://github.com/fornieDev/Junior-Programmer-15--Brick-Breaker",
     "deployUrl": "https://play.unity.com/en/games/d558765c-eb3b-4247-93a7-2fcff9f65a9b/junior-programmer-15-brick-breaker",
-    "images": ["../../public/projectImages/brickBreaker1.png", "../../public/projectImages/brickBreaker2.png", "../../public/projectImages/brickBreaker3.png", "../../public/projectImages/brickBreaker4.png", "../../public/projectImages/brickBreaker5.png"],
-    "video": "../../public/projectVideos/brickBreaker.mkv",
+    "images": ["/projectImages/brickBreaker1.png", "/projectImages/brickBreaker2.png", "/projectImages/brickBreaker3.png", "/projectImages/brickBreaker4.png", "/projectImages/brickBreaker5.png"],
+    "video": "/projectVideos/brickBreaker.mkv",
     "preview": false
   }
 ]
