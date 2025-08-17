@@ -19,7 +19,7 @@ const { title } = Astro.params;
 ---
 
 <CustomLayout title="Project Detail">
-    <h1 class="permanent-marker">Project detail</h1>
+    <h1 class="permanent-marker">Project Detail</h1>
     <div class="div-center">
         {
             ProjectList.filter((project) => project.title === title).map(
@@ -48,7 +48,7 @@ const { title } = Astro.params;
                             <a href={project.githubUrl} target="_blank">
                                 <img
                                     src="/footerIcons/githubIcon.svg"
-                                    alt="Github Link"
+                                    alt="GitHub Link"
                                     width="50"
                                     height="50"
                                     title="GitHub Link"
