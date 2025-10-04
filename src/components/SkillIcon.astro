@@ -3,12 +3,13 @@ const { src, alt, rate } = Astro.props;
 
 const solidStars = Array.from({ length: rate });
 const emptyStars = Array.from({ length: 5 - rate });
-const rateHint = "1 star : Used for less than 6 months ; 2 stars : Used for more than 6 months ; 3 stars : Used for more than 1 year ; 4 stars : Used for more than 2 years ; 5 stars : Used for more than 5 years"
+const rateHint =
+    "1 star : < 6 months | 2 stars : > 6 months | 3 stars : > 1 year | 4 stars : > 2 years | 5 stars : > 5 years";
 ---
 
-<div class="skill-div">
-    <img src={src} alt={alt} class="skill-logo" title={alt} />
-    <div class="stars">
+<div id="skill-div">
+    <img src={src} alt={alt} id="skill-logo" title={alt} />
+    <div id="stars">
         {
             solidStars.map(() => (
                 <img
@@ -30,41 +31,78 @@ const rateHint = "1 star : Used for less than 6 months ; 2 stars : Used for more
             ))
         }
     </div>
+    <h3 id="skill-name">{alt}</h3>
 </div>
 
 <style>
-    .skill-div {
-        margin-top: 16px;
+    /* Common */
+    #skill-div {
+        margin-top: 1em;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 8px;
+        gap: 0.5em;
     }
 
-    .skill-logo {
-        width: 100px; /* min 40px, ideal 15% del ancho viewport, máx 100px */
+    #skill-logo {
         aspect-ratio: 1 / 1;
         border-radius: 50%;
         object-fit: cover;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.1);
     }
 
-    .stars {
+    #stars {
         display: flex;
         justify-content: center;
     }
 
     .star-icon {
-        width: 20px; /* min 12px, ideal 4% del ancho viewport, máx 20px */
         height: auto; /* proporcional */
     }
-    .skill-logo:hover {
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-        transform: scale(1.1);
-        transition: transform 0.5s ease;
+
+    #skill-name {
+        margin: 0;
+        white-space: nowrap;
     }
-    .stars:hover {
-        transform: scale(1.5);
-        transition: transform 0.5s ease;
+    /* Mobile */
+    @media (hover: none) {
+        #skill-logo {
+            width: 3em;
+        }
+        .star-icon {
+            width: 0.6em;
+        }
+        #skill-name {
+            font-size: 0.7em;
+            text-align: center;
+            justify-content: center;
+        }
+        #skill-div {
+            width: 4em;
+        }
+    }
+    /* PC */
+    @media (hover: hover) {
+        #skill-logo {
+            width: 5em; /* min 40px, ideal 15% del ancho viewport, máx 100px */
+        }
+        .star-icon {
+            width: 1.2em; /* min 12px, ideal 4% del ancho viewport, máx 20px */
+        }
+        #skill-name {
+            font-size: 0.8em;
+        }
+        #skill-div {
+            width: 6em;
+        }
+        #skill-logo:hover {
+            box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.4);
+            transform: scale(1.1);
+            transition: transform 0.5s ease;
+        }
+        #stars:hover {
+            transform: scale(1.5);
+            transition: transform 0.5s ease;
+        }
     }
 </style>

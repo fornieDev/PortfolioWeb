@@ -1,22 +1,542 @@
+---
+import "../styles/colors2.css";
+
+const { title } = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/footerIcons/cv.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
+	<header>
+		<div id="header" class="row">
+			<button id="moreBtn">
+				<img src="/projectIcons/more.svg" alt="Menú" class="icon" />
+			</button>
+			<button id="sunBtn">
+				<img src="/headerIcons/sun.svg" alt="Light Mode" class="icon" />
+			</button>
+			<button id="moonBtn">
+				<img src="/headerIcons/moon.svg" alt="Dark Mode" class="icon" />
+			</button>
+		</div>
+	</header>
+	<!-- Falta rellenar los enlaces -->
+	<aside>
+		<nav id="sideMenu">
+			<ul>
+				<li><a href="/index#About">Sobre mí</a></li>
+				<li><a href="/index#Knowledge">Conocimientos</a></li>
+				<li>
+					<a href="/index#Projects">Proyectos</a>
+					<ul>
+						<li><a href="/projects2">Todos los proyectos</a></li>
+					</ul>
+				</li>
+				<li><a href="/index#Contact">Contacto</a></li>
+				<li>
+					<ul>
+						<li>
+							<a href="https://github.com/fornieDev">Github</a>
+						</li>
+						<li>
+							<a
+								href="https://www.linkedin.com/in/javier-forni%C3%A9-ortega-8435a9307/"
+								>Linkedin</a
+							>
+						</li>
+						<li><a href="/curriculum/CV.pdf">Currículum</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</aside>
 	<body>
-		<slot />
+		<main>
+			<slot />
+		</main>
 	</body>
-</html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+	<style is:global>
+		/* Common */
+		html,
+		body {
+			margin: 0;
+			margin-top: 3em;
+			font-family: 'Orbitron', sans-serif;
+		}
+		html {
+			scroll-behavior: smooth;
+		}
+		#header {
+			position: fixed; /* Mantiene el header siempre visible */
+			top: 0; /* Pegado al borde superior */
+			left: 0; /* Pegado al borde izquierdo */
+			width: 100%;
+			z-index: 1000;
+		}
+		.row {
+			display: flex; /* Activa Flexbox */
+			flex-direction: row; /* Los elementos van en fila (izquierda a derecha) */
+			justify-content: flex-start; /* Justifica todo a la izquierda */
+			align-items: center; /* Opcional: centra verticalmente los elementos */
+			padding: 0.2em;
+			gap: 2em;
+		}
+		button {
+			background: transparent;
+			border: none;
+			cursor: pointer;
+		}
+		.icon {
+			width: 2em;
+		}
+		#sideMenu {
+			position: fixed; /* Fijo en la pantalla */
+			top: 0; /* Desde el borde superior */
+			left: -20em; /* Oculto inicialmente fuera de la pantalla */
+			height: 100%; /* Que ocupe toda la altura */
+			padding: 1em;
+			transition: left 0.3s ease; /* Animación al abrir/cerrar */
+			z-index: 999; /* Por encima del header */
+			padding-top: 2em;
+		}
+		#sideMenu.open {
+			left: 0;
+		}
+		#sideMenu ul {
+			list-style: none; /* Quita los puntitos */
+			padding: 0;
+		}
+		#sideMenu ul ul {
+			padding-left: 1em; /* Indentación para listas internas */
+		}
+		#sideMenu a {
+			text-decoration: none;
+		}
+		.center {
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			padding: 0em;
+		}
+		.vertical {
+			display: flex;
+			flex-direction: column;
+		}
+		section {
+			padding-top: 2em;
+			padding: 0.5em;
+
+			scroll-margin-top: 3em;
+		}
+		#about-container {
+			display: flex;
+
+			align-items: center;
+		}
+		#profilePhoto {
+			border-radius: 50%; /* hace la forma circular */
+			object-fit: cover;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			align-self: center;
+		}
+		h1 {
+			text-align: center;
+		}
+		#jobBox {
+			display: inline;
+		}
+		#cursor {
+			display: inline-block;
+			vertical-align: top;
+			font-size: 1.5em;
+		}
+		p {
+			font-size: 1.5em;
+		}
+		hr {
+			width: 90%;
+			border: none;
+			height: 0.1em;
+			margin-top: 3em;
+		}
+		.card {
+			border-radius: 0.5em; /* Esquinas redondeadas */
+			padding: 2em; /* Espacio interno */
+			display: flex;
+			flex-direction: column; /* para que h1 y img estén uno encima del otro */
+			justify-content: center; /* centra verticalmente si quieres, opcional */
+			gap: 2em;
+			width: 100%;
+			height: 100%; /* ← Para que se estire al alto del padre */
+			box-sizing: border-box; /* Para que el padding no rompa el alto */
+			margin: 0 auto;
+			margin-top: 4em;
+		}
+		#skill-div {
+			flex-wrap: wrap; /* <-- Permite que salten a la siguiente fila */
+			display: flex; /* Activa Flexbox */
+			flex-direction: row; /* Los elementos van en fila (izquierda a derecha) */
+			justify-content: flex-start; /* Justifica todo a la izquierda */
+			align-items: center; /* Opcional: centra verticalmente los elementos */
+			padding: 0.2em;
+			gap: 2em;
+		}
+		#gallery {
+			display: flex;
+			border: 0.1em solid var(--color-primary);
+			border-radius: 0.5em;
+			overflow: hidden;
+			padding: 0;
+		}
+		#linkGallery {
+			flex-grow: 1;
+			flex-shrink: 1;
+			width: 0;
+			transition: 0.5s ease;
+			overflow: hidden; /* evita que la imagen se salga */
+		}
+		#linkGallery img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			opacity: 0.8;
+			transition: 0.5s ease;
+		}
+		#column {
+			flex: 1; /* ocupa el mismo espacio cada columna */
+			padding: 1em;
+			display: flex;
+			flex-direction: column; /* organiza los hijos en columna */
+			align-items: center; /* centra horizontalmente */
+			justify-content: center;
+		}
+		h2 {
+			text-align: center;
+		}
+		h3 {
+			text-align: center;
+		}
+		#emailBox {
+			width: 60%;
+			height: 5em;
+			justify-content: start;
+		}
+		.toast {
+			border-radius: 10em;
+			opacity: 0;
+			background-color: var(--color-secondary);
+			width: 80%;
+			position: fixed;
+			bottom: 0; /* Pegado al borde superior */
+			margin-bottom: 1em;
+			left: 50%;
+			transform: translateX(-50%) translateY(20px);
+			z-index: 1000;
+			text-align: center;
+			transition:
+				opacity 0.5s ease,
+				transform 0.5s ease;
+			padding: 1em;
+			font-size: 0.8em;
+		}
+		.toast.show {
+			opacity: 1;
+			transform: translateX(-50%) translateY(0);
+			box-shadow: 0 4px 8px var(--color-bg-dark);
+		}
+
+		#projectGallery {
+			display: flex;
+			border-radius: 0.5em;
+			position: relative; /* necesario para el z-index */
+			z-index: 1; /* nivel base */
+			padding: 0;
+		}
+
+		.projectGallery:hover {
+			z-index: 999; /* sube toda la galería */
+		}
+
+		.projectImage {
+			flex-grow: 1;
+			flex-shrink: 1;
+			width: 0;
+			height: 100%;
+			object-fit: contain; /* mantiene la proporción, sin recorte */
+			background-color: var(
+				--color-background,
+				#ffffff
+			); /* relleno detrás */
+			opacity: 0.8;
+			transition: 0.5s ease;
+			z-index: 1;
+		}
+
+		.projectImage:hover {
+			transform: scale(4);
+			opacity: 1;
+			filter: contrast(120%);
+			position: relative;
+			z-index: 2; /* encima del resto de imágenes dentro de la galería */
+			background-color: transparent; /* sin relleno en hover */
+		}
+
+		/* Themes */
+		html.light {
+			background-color: var(--color-bg-light);
+			color: var(--color-text-light);
+		}
+		html.dark {
+			background-color: var(--color-bg-dark);
+			color: var(--color-text-dark);
+		}
+		html.light #header {
+			background-color: var(--color-header-light);
+			opacity: 0.95;
+		}
+		html.dark #header {
+			background-color: var(--color-header-dark);
+			opacity: 0.95;
+		}
+		html.dark #moreBtn img {
+			filter: invert(100%) brightness(100%);
+		}
+		html.light #sideMenu {
+			background-color: var(--color-menu-light);
+			opacity: 0.95;
+		}
+		html.dark #sideMenu {
+			background-color: var(--color-menu-dark);
+			opacity: 0.95;
+		}
+		html.light #sideMenu a {
+			color: var(--color-text-light);
+		}
+		html.dark #sideMenu a {
+			color: var(--color-text-dark);
+		}
+		html.light #sideMenu a:active {
+			color: var(--color-accent); /* Color cuando haces clic */
+		}
+		html.dark #sideMenu a:active {
+			color: var(--color-accent); /* Color cuando haces clic */
+		}
+		html.light h1 {
+			color: var(--color-primary);
+		}
+		html.dark h1 {
+			color: var(--color-secondary);
+		}
+		html.light h2 {
+			color: var(--color-accent-light);
+		}
+		html.dark h2 {
+			color: var(--color-accent-dark);
+		}
+		html.light hr {
+			background-color: var(--color-text-dark);
+		}
+		html.dark hr {
+			background-color: var(--color-text-dark);
+		}
+		html.light .card {
+			box-shadow: 0 4px 8px var(--color-text-light); /* Sombra suave */
+		}
+		html.dark .card {
+			box-shadow: 0 4px 8px var(--color-accent-dark); /* Sombra suave */
+		}
+		html.light h3 {
+			color: var(--color-text-light);
+		}
+		html.dark h3 {
+			color: var(--color-accent-dark);
+		}
+		html.light #gallery {
+			border: 0.2em solid var(--color-text-light);
+		}
+		html.dark #gallery {
+			border: 0.2em solid var(--color-accent-dark);
+		}
+		html.light #projectGallery {
+			border: 0.2em solid var(--color-accent-light);
+		}
+		html.dark #projectGallery {
+			border: 0.2em solid var(--color-accent-dark);
+		}
+		html.light hr {
+			background-color: var(--color-text-light);
+		}
+		html.dark hr {
+			background-color: var(--color-accent-dark);
+		}
+		html.light #emailBox {
+			background-color: var(--color-bg-light);
+			color: var(--color-text-light);
+		}
+		html.dark #emailBox {
+			background-color: var(--color-bg-dark);
+			color: var(--color-text-dark);
+		}
+		/* Mobile */
+		@media (hover: none) {
+			#sideMenu {
+				width: 12em; /* Ancho del menú */
+			}
+			body {
+				padding: 0.5em;
+			}
+			#about-container {
+				flex-direction: column;
+				text-align: center;
+			}
+			#profilePhoto {
+				width: 7.5em; /* ancho fijo */
+				height: 7.5em; /* alto igual al ancho */
+			}
+			p {
+				padding: 1em;
+			}
+			#gallery {
+				width: 20em;
+				height: 8em;
+			}
+			#linkGallery.clicked {
+				width: 15em;
+			}
+			#linkGallery.clicked img {
+				opacity: 1;
+				filter: contrast(120%);
+			}
+			#projectTitle {
+				height: 2.5em;
+			}
+			#projectDescription {
+				height: 15em;
+			}
+			#contact-div {
+			}
+			#projectGallery {
+				width: 20em;
+				height: 8em;
+			}
+			video {
+				width: 20em;
+				height: 15em;
+			}
+		}
+		/* PC */
+		@media (hover: hover) {
+			#sideMenu {
+				width: 10em; /* Ancho del menú */
+			}
+			body {
+				padding: 5em;
+			}
+			#about-container {
+				flex-direction: row; /* Los elementos van en fila (izquierda a derecha) */
+				justify-content: flex-start; /* Justifica todo a la izquierda */
+				padding: 0.2em;
+				gap: 5em;
+				max-width: 40em;
+				margin: 0 auto;
+			}
+			#profilePhoto {
+				width: 10em; /* ancho fijo */
+				height: 10em; /* alto igual al ancho */
+			}
+			p {
+				padding: 2em;
+				text-align: justify;
+			}
+			#gallery {
+				width: 50em;
+				height: 12em;
+			}
+			#linkGallery:hover {
+				width: 40em;
+			}
+			#linkGallery:hover img {
+				opacity: 1;
+				filter: contrast(120%);
+			}
+			#projectTitle {
+				height: 5em;
+			}
+			#projectDescription {
+				height: 5em;
+			}
+			#contact-div {
+				display: flex; /* Activa Flexbox */
+				flex-direction: row; /* Los elementos van en fila (izquierda a derecha) */
+				justify-content: flex-start; /* Justifica todo a la izquierda */
+				align-items: center; /* Opcional: centra verticalmente los elementos */
+				padding: 0.2em;
+				gap: 2em;
+			}
+			#projectGallery {
+				width: 60em;
+				height: 20em;
+			}
+			video {
+				width: 40em;
+				height: 25em;
+			}
+		}
+	</style>
+
+	<script>
+		//Aplicar clase light o dark a html segun el tema del sistema
+		//Por defecto el tema es light
+		if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+			document.documentElement.classList.add("dark");
+		} else {
+			document.documentElement.classList.add("light");
+		}
+		//Cambiar tema con botones
+		document
+			.getElementById("sunBtn")
+			?.addEventListener("click", setLightTheme);
+		function setLightTheme() {
+			document.documentElement.classList.remove("dark");
+			document.documentElement.classList.add("light");
+		}
+		document
+			.getElementById("moonBtn")
+			?.addEventListener("click", setDarkTheme);
+		function setDarkTheme() {
+			document.documentElement.classList.remove("light");
+			document.documentElement.classList.add("dark");
+		}
+		//Abrir o cerrar el menú lateral
+		const moreBtn = document.getElementById("moreBtn") as HTMLButtonElement;
+		const sideMenu = document.getElementById("sideMenu") as HTMLElement;
+		//Pulsar el botón
+		moreBtn?.addEventListener("click", () => {
+			sideMenu.classList.toggle("open");
+		});
+		// Cerrar el menú si se hace clic fuera
+		document.addEventListener("click", (e) => {
+			if (
+				!sideMenu.contains(e.target as Node) &&
+				!moreBtn.contains(e.target as Node)
+			) {
+				sideMenu.classList.remove("open");
+			}
+		});
+	</script>
+
+
+</html>

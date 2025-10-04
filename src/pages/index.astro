@@ -1,294 +1,436 @@
 ---
-import CustomLayout from "../layouts/CustomLayout.astro";
+import Layout from "../layouts/Layout.astro";
 import SkillIcon from "../components/SkillIcon.astro";
 import Projects from "../data/projects.json";
 ---
 
-<CustomLayout title="FornieDev Portfolio">
-	<!--Arriba habría que añadir botones para cambiar de modo claro a oscuro y cambiar de idioma -->
-	<!-- Más adelante tendría que hacer la web mobile first y estilar el css para la versión web -->
+<Layout title="FornieDev Portfolio">
+    <section id="About">
+        <div id="about-container">
+            <img
+                src="/headerIcons/profilePhoto.JPG"
+                alt="Profile photo"
+                id="profilePhoto"
+            />
+            <div id="about-text-container">
+                <h1 id="nameBox"></h1>
+                <h2 id="jobBox"></h2><span id="cursor" style="visibility:hidden"
+                    >|</span
+                >
+            </div>
+        </div>
+        <p>
+            Javier Fornié Ortega, <b
+                >desarrolador de software autodidacta.</b
+            >
+            Cuando era fisioterapeuta tuve una idea de una app mobile,
+            pero no tenía dinero suficiente para desarrollarla.
+            Por ello, decidí hacerla yo mismo.
+            Empecé a estudiar en mis ratos libres, y cuando aprendí las bases,
+            comencé a desarrollar mi idea y, tras unos meses, publiqué mi primera app en
+            Play Store.En ese momento descubrí que no sólo se me daba bien la programación, además
+            me encantaba. Ahí fue cuando decidí convertirme en desarrollador. Y este es el principio de mi historia ...
+        </p>
+    </section>
 
-	<!-- Cabecera -->
-	<div class="div-center">
-		<h1 class="permanent-marker">WELCOME TO MY PORTFOLIO!!!</h1>
-		<img
-			src="/headerIcons/profilePhoto.JPG"
-			alt="Profile photo"
-			class="profilePhoto"
-			id="profilePhoto"
-		/>
-	</div>
-	<div class="div-center">
-		<p class="indie-flower">
-			Hi! I'm Javier Fornié Ortega, <b>a self-taught software developer. </b>
-			I was a physiotherapist when I had an idea for a mobile app, but I didn't have 
-			enough money to develop it, so I decided to develop it myself. I started
-			to study and develop my app in my house in my free time and, after a few
-			months, I published my first app. That was the moment I realized that I loved this;
-			 I wanted to become a developer. And this is the beginning
-			of my story...
-		</p>
-	</div>
+    <section id="Knowledge">
+        <h1>Conocimiento</h1>
 
-	<!-- Se podrian mejor los iconos para que nose vean recortados -->
-	<!-- Section knowledge -->
-	<h2 class="permanent-marker">KNOWLEDGE</h2>
-	<!-- First card row -->
-	<div class="div-row">
-		<section class="card">
-			<h3 class="indie-flower">
-				Integrated development environments and frameworks
-			</h3>
-			<div class="div-row wrap">
-				<!-- Las cards deberian ser responsive para que al estrechar el navegador ocupen un alto igual -->
-				<SkillIcon
-					src="/knowledgeIcons/androidStudioLogo.jpg"
-					alt="Android Studio"
-					rate="3"
-				/>
-				<SkillIcon
-					src="/knowledgeIcons/vs.jpg"
-					alt="Visual Studio"
-					rate="2"
-				/>
-				<SkillIcon
-					src="/knowledgeIcons/eclipse.svg"
-					alt="Eclipse"
-					rate="1"
-				/>
-				<SkillIcon
-					src="/knowledgeIcons/netbeans.svg"
-					alt="NetBeans"
-					rate="1"
-				/>
-				<SkillIcon
-					src="/knowledgeIcons/unity.svg"
-					alt="Unity"
-					rate="2"
-				/>
-				<SkillIcon
-					src="/knowledgeIcons/vsc.jpg"
-					alt="Visual Studio Code"
-					rate="2"
-				/>
-				<SkillIcon
-					src="/knowledgeIcons/astro.png"
-					alt="Astro"
-					rate="2"
-				/>
-			</div>
-		</section>
-		<section class="card">
-			<h3 class="indie-flower">Languages</h3>
-			<div class="div-row wrap">
-				<SkillIcon
-					src="/knowledgeIcons/c++.png"
-					alt="C++"
-					rate="1"
-				/>
-				<SkillIcon
-					src="/knowledgeIcons/kotlin.png"
-					alt="Kotlin"
-					rate="3"
-				/>
-				<SkillIcon
-					src="/knowledgeIcons/csharp.png"
-					alt="C sharp"
-					rate="2"
-				/>
-				<SkillIcon
-					src="/knowledgeIcons/java.svg"
-					alt="Java"
-					rate="1"
-				/>
-				<SkillIcon
-					src="/knowledgeIcons/python.svg"
-					alt="Python"
-					rate="1"
-				/>
-				<SkillIcon
-					src="/knowledgeIcons/html2.svg"
-					alt="HTML"
-					rate="2"
-				/>
-				<SkillIcon
-					src="/knowledgeIcons/css3.svg"
-					alt="CSS"
-					rate="2"
-				/>
-				<SkillIcon
-					src="/knowledgeIcons/javascript.svg"
-					alt="JavaScript"
-					rate="2"
-				/>
-			</div>
-		</section>
-	</div>
-	<!-- Second card row -->
-	<div class="div-row">
-		<section class="card">
-			<h3 class="indie-flower">Database management systems</h3>
-			<div class="div-row wrap">
-				<SkillIcon
-					src="/knowledgeIcons/firestore.svg"
-					alt="Firestore"
-					rate="3"
-				/>
-				<SkillIcon
-					src="/knowledgeIcons/cloudstorage.png"
-					alt="Cloud Storage"
-					rate="3"
-				/>
-				<SkillIcon
-					src="/knowledgeIcons/mysql_workbench.jpg"
-					alt="MySQL Workbench"
-					rate="1"
-				/>
-				<SkillIcon
-					src="/knowledgeIcons/oracleSqlDeveloper2.png"
-					alt="Oracle SQL Developer"
-					rate="1"
-				/>
-			</div>
-		</section>
-		<section class="card">
-			<h3 class="indie-flower">Database languages</h3>
-			<div class="div-row wrap">
-				<SkillIcon
-					src="/knowledgeIcons/sql.png"
-					alt="SQL"
-					rate="1"
-				/>
-				<SkillIcon
-					src="/knowledgeIcons/pl-sql.png"
-					alt="PL SQL"
-					rate="1"
-				/>
-			</div>
-		</section>
-	</div>
+        <section class="card">
+            <h3>IDEs y frameworks</h3>
+            <div id="skill-div">
+                <!-- Las cards deberian ser responsive para que al estrechar el navegador ocupen un alto igual -->
+                <SkillIcon
+                    src="/knowledgeIcons/androidStudioLogo.jpg"
+                    alt="Android Studio"
+                    rate="3"
+                />
+                <SkillIcon
+                    src="/knowledgeIcons/vs.jpg"
+                    alt="Visual Studio"
+                    rate="2"
+                />
+                <SkillIcon
+                    src="/knowledgeIcons/eclipse.svg"
+                    alt="Eclipse"
+                    rate="1"
+                />
+                <SkillIcon
+                    src="/knowledgeIcons/netbeans.svg"
+                    alt="NetBeans"
+                    rate="1"
+                />
+                <SkillIcon
+                    src="/knowledgeIcons/unity.svg"
+                    alt="Unity"
+                    rate="2"
+                />
+                <SkillIcon
+                    src="/knowledgeIcons/vsc.jpg"
+                    alt="VS Code"
+                    rate="2"
+                />
+                <SkillIcon
+                    src="/knowledgeIcons/astro.png"
+                    alt="Astro"
+                    rate="2"
+                />
+            </div>
+        </section>
 
-	<!-- Estaría bien componetizar la galería -->
-	<!-- Se podria hacer más responsible el p de la description -->
-	<!-- Pages projects y project -->
-	<!-- Section projects -->
-	<h2 class="permanent-marker">PROJECTS</h2>
-	<div class="div-center">
-		<section class="gallery">
-			{
-				Projects.filter((project) => project.preview).map((project) => (
-					<a
-						href={`/projectDetail/${project.title}`}
-						class="linkGallery"
-					>
-						<img
-							src={project.images[0]}
-							alt={project.title}
-							class="imageGallery"
-							data-title={project.title}
-							data-description={project.description}
-						/>
-					</a>
-				))
-			}
-		</section>
-	</div>
-	<h3 class="indie-flower center-text empty" id="projectTitle"></h3>
-	<p class="indie-flower center-text empty" id="projectDescription"></p>
-	<div class="div-center">
-		<a href="projects">
-			<img src="/projectIcons/more.svg" width="50" height="50" title="More projects"/>
-		</a>
-	</div>
+        <section class="card">
+            <h3>Lenguajes de programación</h3>
+            <div id="skill-div">
+                <SkillIcon src="/knowledgeIcons/c++.png" alt="C++" rate="1" />
+                <SkillIcon
+                    src="/knowledgeIcons/kotlin.png"
+                    alt="Kotlin"
+                    rate="3"
+                />
+                <SkillIcon
+                    src="/knowledgeIcons/csharp.png"
+                    alt="C sharp"
+                    rate="2"
+                />
+                <SkillIcon src="/knowledgeIcons/java.svg" alt="Java" rate="1" />
+                <SkillIcon
+                    src="/knowledgeIcons/python.svg"
+                    alt="Python"
+                    rate="1"
+                />
+                <SkillIcon
+                    src="/knowledgeIcons/html2.svg"
+                    alt="HTML"
+                    rate="2"
+                />
+                <SkillIcon src="/knowledgeIcons/css3.svg" alt="CSS" rate="2" />
+                <SkillIcon
+                    src="/knowledgeIcons/javascript.svg"
+                    alt="JavaScript"
+                    rate="2"
+                />
+            </div>
+        </section>
 
-	<hr />
-	<!-- Footer section -->
-	<div class="div-row">
-		<div class="column">
-			<!-- Social network section -->
-			<h2 class="permanent-marker">Want some info?</h2>
-			<div class="div-row center-items">
-				<a href="https://github.com/fornieDev" target="_blank">
-					<img
-						src="/footerIcons/githubIcon.svg"
-						alt="GitHub Icon"
-						width="50"
-						height="50"
-					/>
-				</a>
-				<a
-					href="https://www.linkedin.com/in/javier-forni%C3%A9-ortega-8435a9307/"
-					target="_blank"
-				>
-					<img
-						src="/footerIcons/linkedin.svg"
-						alt="LinkedIn"
-						width="50"
-						height="50"
-					/>
-				</a>
-				<a href="/curriculum/CV.pdf" target="_blank">
-					<img
-						src="/footerIcons/cv.svg"
-						alt="Curriculum"
-						width="50"
-						height="50"
-					/>
-				</a>
-			</div>
-			<h3 class="indie-flower center-text">
-				Check my curriculum or social networks
-			</h3>
-		</div>
-		<div class="column">
-			<!-- Email section -->
-			<h2 class="permanent-marker">Did you like it?</h2>
-			<div class="div-center">
-				<a href="mailto:jfornieortega@gmail.com" target="_blank">
-					<img
-						src="/footerIcons/emailIcon.svg"
-						alt="Email Icon"
-						width="50"
-						height="50"
-					/>
-				</a>
-				<h3 class="indie-flower">
-					Contact me on jfornieortega@gmail.com
-				</h3>
-			</div>
-		</div>
-	</div>
+        <section class="card">
+            <h3>Sistemas gestores de bases de datos</h3>
+            <div id="skill-div">
+                <SkillIcon
+                    src="/knowledgeIcons/firestore.svg"
+                    alt="Firestore"
+                    rate="3"
+                />
+                <SkillIcon
+                    src="/knowledgeIcons/cloudstorage.png"
+                    alt="Cloud Storage"
+                    rate="3"
+                />
+                <SkillIcon
+                    src="/knowledgeIcons/mysql_workbench.jpg"
+                    alt="MySQL Workbench"
+                    rate="1"
+                />
+                <SkillIcon
+                    src="/knowledgeIcons/oracleSqlDeveloper2.png"
+                    alt="Oracle SQL"
+                    rate="1"
+                />
+            </div>
+        </section>
 
-	<script>
-		const images = document.querySelectorAll(".imageGallery");
+        <section class="card">
+            <h3>Lenguajes de bases de datos</h3>
+            <div id="skill-div">
+                <SkillIcon src="/knowledgeIcons/sql.png" alt="SQL" rate="1" />
+                <SkillIcon
+                    src="/knowledgeIcons/pl-sql.png"
+                    alt="PL SQL"
+                    rate="1"
+                />
+            </div>
+        </section>
 
-		images.forEach((img) => {
-			img.addEventListener("mouseover", () => {
-				const title = img.getAttribute("data-title");
-				const description = img.getAttribute("data-description");
-				console.log(title);
+        <section class="toast" id="toast"></section>
+    </section>
 
-				document.getElementById("projectTitle")!!.textContent = title;
-				document.getElementById("projectDescription")!!.textContent =
-					description;
-			});
+    <section id="Projects">
+        <h1>Proyectos</h1>
 
-			img.addEventListener("mouseout", () => {
-				document.getElementById("projectTitle")!!.textContent = "";
-				document.getElementById("projectDescription")!!.textContent =
-					"";
-			});
+        <div class="center vertical">
+            <section id="gallery">
+                {
+                    Projects.filter((project) => project.preview).map(
+                        (project) => (
+                            <a
+                                href={`/projectDetail2/${project.title}`}
+                                id="linkGallery"
+                            >
+                                <img
+                                    src={project.images[0]}
+                                    alt={project.title}
+                                    id="imageGallery"
+                                    data-title={project.title}
+                                    data-description={project.description}
+                                />
+                            </a>
+                        ),
+                    )
+                }
+            </section>
+        </div>
+        <h3 class="center" id="projectTitle"></h3>
+        <p class="center" id="projectDescription"></p>
 
-			img.addEventListener("click", () => {
-				const title = img.getAttribute("data-title");
-				if (title == "More projects") {
-					window.location.href = `projects`;
-				} else {
-				}
-			});
-		});
-	</script>
-</CustomLayout>
+        <div class="center vertical">
+            <a href="projects2" id="moreBtn">
+                <img
+                    src="/projectIcons/more.svg"
+                    width="50"
+                    height="50"
+                    title="More projects"
+                />
+            </a>
+        </div>
+    </section>
 
-<!-- window.location.href = `project?data=${encodeURIComponent(title!!)}`; -->
-<!-- Esto iba dentro del else del listener click de las imagenes de la galeria -->
+    <hr />
+
+    <section id="Contact">
+        <h1>Contacto</h1>
+        <div id="contact-div">
+            <div id="column">
+                <h3>Currículum y RRSS</h3>
+                <div class="row center">
+                    <a href="https://github.com/fornieDev" target="_blank">
+                        <img
+                            src="/footerIcons/githubIcon.svg"
+                            alt="GitHub Icon"
+                            width="40em"
+                            height="40em"
+                        />
+                    </a>
+                    <a
+                        href="https://www.linkedin.com/in/javier-forni%C3%A9-ortega-8435a9307/"
+                        target="_blank"
+                    >
+                        <img
+                            src="/footerIcons/linkedin.svg"
+                            alt="LinkedIn"
+                            width="50"
+                            height="50"
+                        />
+                    </a>
+                    <a href="/curriculum/CV.pdf" target="_blank">
+                        <img
+                            src="/footerIcons/cv.svg"
+                            alt="Curriculum"
+                            width="50"
+                            height="50"
+                        />
+                    </a>
+                </div>
+            </div>
+            <div id="column">
+                <h3>Contáctame a jfornieortega@gmail.com</h3>
+                <textarea id="emailBox"></textarea>
+                <br />
+                <button id="send">
+                    <img
+                        src="/footerIcons/emailIcon.svg"
+                        alt="Email Icon"
+                        width="50"
+                        height="50"
+                    />
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        //Animación del nombre y trabajo
+        const nameText = "Javier Fornié Ortega";
+        const nameBox = document.getElementById("nameBox") as HTMLElement;
+        const jobText = "Desarrollador de software";
+        const jobBox = document.getElementById("jobBox") as HTMLElement;
+        const cursor = document.getElementById("cursor") as HTMLSpanElement;
+        let i = 0;
+        let j = 0;
+        function typeWriter() {
+            if (i < nameText.length) {
+                nameBox.textContent = nameBox.textContent.slice(0, -1);
+                nameBox.textContent += nameText[i];
+                nameBox.textContent += "|";
+                i++;
+                setTimeout(typeWriter, 100); // 100 ms entre letras
+            } else {
+                nameBox.textContent = nameBox.textContent.slice(0, -1);
+                jobBox.textContent += "|";
+                typeWriter2();
+            }
+        }
+        function typeWriter2() {
+            if (j < jobText.length) {
+                jobBox.textContent = jobBox.textContent.slice(0, -1);
+                jobBox.textContent += jobText[j];
+                jobBox.textContent += "|";
+                j++;
+                setTimeout(typeWriter2, 100); // 100 ms entre letras
+            } else {
+                //setTimeout(cursorLoop2, 100);
+                jobBox.textContent = jobBox.textContent.slice(0, -1);
+                cursorBlink();
+            }
+        }
+        function cursorBlink() {
+            cursor.style.visibility = "visible";
+            setInterval(() => {
+                cursor.style.visibility =
+                    cursor.style.visibility === "visible"
+                        ? "hidden"
+                        : "visible";
+            }, 500);
+        }
+        function cursorLoop() {
+            jobBox.textContent += "|";
+            setTimeout(cursorLoop2, 500);
+        }
+        function cursorLoop2() {
+            jobBox.textContent = jobBox.textContent.slice(0, -1);
+            setTimeout(cursorLoop, 500);
+        }
+        nameBox.textContent += "|";
+        typeWriter();
+        //Solo para pc,mostrar titulo y descripcion al hacer hover
+        if (!("ontouchstart" in window)) {
+            const images = document.querySelectorAll("#imageGallery");
+
+            images.forEach((img) => {
+                img.addEventListener("mouseover", () => {
+                    const title = img.getAttribute("data-title");
+                    const description = img.getAttribute("data-description");
+                    console.log(title);
+
+                    document.getElementById("projectTitle")!!.textContent =
+                        title;
+                    document.getElementById(
+                        "projectDescription",
+                    )!!.textContent = description;
+                });
+
+                img.addEventListener("mouseout", () => {
+                    document.getElementById("projectTitle")!!.textContent = "";
+                    document.getElementById(
+                        "projectDescription",
+                    )!!.textContent = "";
+                });
+
+                img.addEventListener("click", () => {
+                    const title = img.getAttribute("data-title");
+                    if (title == "More projects") {
+                        window.location.href = `projects`;
+                    } else {
+                    }
+                });
+            });
+        }
+        //En mobile
+        if ("ontouchstart" in window) {
+            //Deshabilita los enlaces de las imágenes
+            //Añade clase clicked al clicar
+            const galleryLinks = document.querySelectorAll("#linkGallery");
+            galleryLinks.forEach((link) => {
+                link.addEventListener("click", (event) => {
+                    if (link.classList.contains("clicked")) {
+                        return; // No hacemos preventDefault, el enlace navega
+                    }
+                    event.preventDefault(); // Deshabilita la navegación
+                    // Quita la clase clicked de todos los enlaces
+                    galleryLinks.forEach((l) => l.classList.remove("clicked"));
+
+                    // Añade clicked solo al enlace actual
+                    link.classList.add("clicked");
+                });
+            });
+            //Al clicar la imagen muestra el titulo y descripción
+            const images = document.querySelectorAll("#imageGallery");
+            images.forEach((img) => {
+                img.addEventListener("click", () => {
+                    const title = img.getAttribute("data-title");
+                    const description = img.getAttribute("data-description");
+                    console.log(title);
+
+                    document.getElementById("projectTitle")!!.textContent =
+                        title;
+                    document.getElementById(
+                        "projectDescription",
+                    )!!.textContent = description;
+                });
+            });
+            //Elimina clase clicked al clicar en el fondo
+            document.addEventListener("click", (e) => {
+                const target = e.target as HTMLElement;
+
+                // Si el clic NO está dentro de un enlace de la galería
+                if (!target.closest("#linkGallery")) {
+                    const galleryLinks =
+                        document.querySelectorAll("#linkGallery");
+                    galleryLinks.forEach((link) => {
+                        link.classList.remove("clicked");
+                    });
+                    document.getElementById("projectTitle")!!.textContent = "";
+                    document.getElementById(
+                        "projectDescription",
+                    )!!.textContent = "";
+                }
+            });
+            //Clic listener de stars para mostrar toast
+            function showToast(text: string) {
+                const toast = document.getElementById("toast") as HTMLElement;
+                toast.textContent = text;
+                toast.classList.add("show");
+                setTimeout(() => {
+                    toast.classList.remove("show");
+                }, 3000);
+            }
+            const stars = document.querySelectorAll(".star-icon");
+            stars.forEach((star) => {
+                star.addEventListener("click", () => {
+                    const hint =
+                        (star as HTMLElement).getAttribute("title") ||
+                        "No hint";
+                    showToast(hint);
+                });
+            });
+        }
+        //Enviar mail
+        const sendBtn = document.getElementById("send") as HTMLButtonElement;
+        const emailBox = document.getElementById("emailBox") as HTMLTextAreaElement;
+
+        sendBtn.addEventListener("click", async () => {
+            const message = emailBox.value.trim();
+
+            if (!message) {
+                alert("Escribe un mensaje antes de enviar.");
+                return;
+            }
+
+            try {
+                const res = await fetch("/api/sendEmail", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ message }),
+                });
+
+                if (res.ok) {
+                    alert("✅ Mensaje enviado correctamente");
+                    emailBox.value = "";
+                } else {
+                    alert("❌ Error enviando mensaje");
+                }
+            } catch (err) {
+                console.error(err);
+                alert("⚠️ Error de conexión");
+            }
+        });
+    </script>
+</Layout>
