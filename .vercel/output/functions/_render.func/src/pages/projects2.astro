@@ -1,0 +1,61 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProjectList from "../data/projects.json";
+---
+
+<!-- Estaría bien que el json estuviese en una bbdd para que al actualizar solo tenga que modificar el fichero -->
+<!-- Y lo mismo para el CV, skills, foto, y strings -->
+<Layout title="Projects List">
+    <h1>All projects</h1>
+    <div class="center vertical">
+        {
+            ProjectList.filter((project) => project.title !== "More projects").map((project) => (
+                <br>
+                <section class="card full-card">
+                    <div class="div-center">
+                        <h2>{project.title}</h2>
+                        <div class="center vertical">
+                        <section id="projectGallery">
+                            {
+                                project.images.map((image) =>(
+                                    <img
+                                        src={image}
+                                        class="projectImage"
+                                    />
+                                ))
+                            }
+                        </section>
+                        </div>
+                        <h3>{project.description}</h3>
+                        <h3>{project.aditionalInfo}</h3>
+                        <video
+                            src={project.video}
+                            controls
+                        />
+                    </div>
+                    <div class="div-row center-items">
+                        <a href={project.githubUrl} target="_blank">
+                            <img
+                                src="/footerIcons/githubIcon.svg"
+                                alt="GitHub Link"
+                                width="50"
+                                height="50"
+                                title="GitHub link"
+                            />
+                        </a>
+                        <a href={project.deployUrl} target="_blank">
+                            <img
+                                src="/footerIcons/download.svg"
+                                alt="Download"
+                                width="50"
+                                height="50"
+                                title="Download"
+                            />
+                        </a>
+                    </div>
+                </section>
+                
+            ))
+        }
+    </div>
+</Layout>
