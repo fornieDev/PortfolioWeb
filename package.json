@@ -29,6 +29,7 @@
     "mysql2": "^3.14.2",
     "nanostore": "^1.2.1",
     "nanostores": "^1.0.1",
+    "nodemailer": "^7.0.6",
     "react": "^19.1.0",
     "react-datepicker": "^8.4.0",
     "react-dom": "^19.1.0",
@@ -49,6 +50,7 @@
   },
   "homepage": "https://github.com/Igalche/Herramientas#readme",
   "devDependencies": {
+    "@types/nodemailer": "^7.0.2",
     "autoprefixer": "^10.4.21",
     "daisyui": "^5.0.43",
     "postcss": "^8.5.4",
