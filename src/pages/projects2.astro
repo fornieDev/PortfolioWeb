@@ -11,7 +11,7 @@ import ProjectList from "../data/projects.json";
         {
             ProjectList.filter((project) => project.title !== "More projects").map((project) => (
                 <br>
-                <section class="card full-card">
+                <section class="card">
                     <div class="div-center">
                         <h2>{project.title}</h2>
                         <div class="center vertical">
@@ -26,8 +26,8 @@ import ProjectList from "../data/projects.json";
                             }
                         </section>
                         </div>
-                        <h3>{project.description}</h3>
-                        <h3>{project.aditionalInfo}</h3>
+                        <p>{project.description}</p>
+                        <p>{project.aditionalInfo}</p>
                         <video
                             src={project.video}
                             controls

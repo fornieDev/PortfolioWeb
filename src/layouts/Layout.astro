@@ -371,7 +371,7 @@ const { title } = Astro.props;
 			border: 0.2em solid var(--color-accent-dark);
 		}
 		html.light #projectGallery {
-			border: 0.2em solid var(--color-accent-light);
+			border: 0.2em solid var(--color-text-light);
 		}
 		html.dark #projectGallery {
 			border: 0.2em solid var(--color-accent-dark);
@@ -406,8 +406,12 @@ const { title } = Astro.props;
 				width: 7.5em; /* ancho fijo */
 				height: 7.5em; /* alto igual al ancho */
 			}
+			h2{
+				font-size: 1.4em;
+			}
 			p {
 				padding: 1em;
+				font-size: 1.3em;
 			}
 			#gallery {
 				width: 20em;
@@ -421,20 +425,24 @@ const { title } = Astro.props;
 				filter: contrast(120%);
 			}
 			#projectTitle {
-				height: 2.5em;
+				height: 0.5em;
+				padding: 0em;
 			}
 			#projectDescription {
-				height: 15em;
+				height: 20em;
 			}
 			#contact-div {
 			}
 			#projectGallery {
-				width: 20em;
+				width: 17em;
 				height: 8em;
 			}
 			video {
-				width: 20em;
+				width: 15em;
 				height: 15em;
+			}
+			.center{
+				padding: 2em;
 			}
 		}
 		/* PC */
@@ -473,16 +481,16 @@ const { title } = Astro.props;
 				filter: contrast(120%);
 			}
 			#projectTitle {
-				height: 5em;
+				height: 2em;
 			}
 			#projectDescription {
-				height: 5em;
+				height: 7em;
 			}
 			#contact-div {
 				display: flex; /* Activa Flexbox */
 				flex-direction: row; /* Los elementos van en fila (izquierda a derecha) */
 				justify-content: flex-start; /* Justifica todo a la izquierda */
-				align-items: center; /* Opcional: centra verticalmente los elementos */
+				align-items: flex-start; /* Opcional: centra verticalmente los elementos */
 				padding: 0.2em;
 				gap: 2em;
 			}
